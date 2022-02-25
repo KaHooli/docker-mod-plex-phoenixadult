@@ -5,7 +5,7 @@ on: [push, pull_request, workflow_dispatch]
 env:
   ENDPOINT: "kahooli/phoenixadult"
   BASEIMAGE: "plex"
-  BRANCH: "master"
+  BRANCH: "main"
 
 jobs:
   build:
