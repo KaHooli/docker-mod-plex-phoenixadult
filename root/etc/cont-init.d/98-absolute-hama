@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bash 
+
+# install git if needed
+if [ -z `command -v git` ]; then
+    echo "**** installing git ****"
+    apt-get install --no-install-recommends -y git
+fi
+
+# clone or update PhoenixAdult.bundle repo
+plugindir="/config/Library/Application Support/Plex Media Server/Plug-ins"
+if [ ! -d "$plugindir/PhoenixAdult.bundle" ]; then
+    echo "**** not found, cloning ****"
+    git clone https://github.com/PAhelper/PhoenixAdult.bundle "$plugindir/PhoenixAdult.bundle"
+else
+    echo "**** pulling latest update ****"
+    git -C "$plugindir/PhoenixAdult.bundle" pull
+fi
+chown -R abc:abc "$plugindir/PhoenixAdult.bundle"
