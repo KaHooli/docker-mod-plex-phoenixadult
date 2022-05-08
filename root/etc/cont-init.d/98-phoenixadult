@@ -13,7 +13,7 @@ if [ ! -d "$plugindir/PhoenixAdult.bundle" ]; then
     git clone https://github.com/PAhelper/PhoenixAdult.bundle "$plugindir/PhoenixAdult.bundle"
 else
     echo "**** PhoenixAdult metadata agent: pulling latest update ****"
-    git config --global --add safe.directory '$plugindir/PhoenixAdult.bundle'
+    git config --global --add safe.directory '/config/Library/Application Support/Plex Media Server/Plug-ins/PhoenixAdult.bundle'
     git -C "$plugindir/PhoenixAdult.bundle" pull
 fi
 chown -R abc:abc "$plugindir/PhoenixAdult.bundle"
